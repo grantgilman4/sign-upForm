@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,500&display=swap');
+
+:root {
+    --font: 'Roboto', sans-serif;
+    --dark-color: #5094b1;
+    --light-color: #bd2c67;
+}
+body {
+    font-family: var(--font);
+    background-color: rgb(35, 37, 38);
+    font-size: medium;
+}
+
+.imageSection {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-image: url("/signInImage.jpg");
+    width: 40vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index:-1;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 10px 0px 5px rgba(24, 24, 24, 0.753);
+}
+
+img, h1{
+    position: relative;
+    color: white;
+    width: 250px;
+    height: auto;
+    text-decoration: overline;
+    text-shadow: 2px 2px 10px rgba(80, 148, 177, .4);
+    
+}
+.formSection {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    height: 100vh;
+    width:326px;
+    color: white;
+}
+legend {
+    margin-bottom: 10px;
+}
+#inputs {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 15px;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input[type=text] {
+    color: var(--light-color);
+}
+label {
+    font-size: smaller;
+}
+#passwordC-error {
+    background-color: red;
+    opacity: .8;
+    margin-bottom: 10px;
+}
+.submitSection {
+    font-family: var(--font);
+    font-size: smaller;
+    padding-top: 20px;
+
+}
+button {
+    background-color: rgb(35, 37, 38);
+    color: var(--light-color);
+    border: 3px solid var(--light-color);
+    border-radius: 3px;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--light-color);
+    color: rgb(35, 37, 38);
+}
+a {
+    color: var(--light-color);
+}
+
+@media screen and (max-width:865px)
+    {
+        .imageSection {
+            top: 0vh;
+            width: 100vw;
+            height: 20vh;
+            box-shadow: 0px 10px 5px rgba(24, 24, 24, 0.753);
+        }
+        
+        .formSection {
+            margin: auto;
+            position:relative;
+        }
+
+
+    }
+
+    @media screen and (min-width:866px)
+    {
+
+        .formSection {
+            left: 50vw;
+            right: 10vw;
+            position: absolute;
+            width: 326px;
+        }
+        
+    }

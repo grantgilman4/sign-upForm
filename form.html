@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign-Up Form</title>
+</head>
+<body>
+    <div class="imageSection">
+        <div class="logo">
+        <img src="/logo.png"></div>
+        <h1>JUST SUBMIT IT.</h1>
+        </div>
+    </div>
+        <div class="formSection">
+            <p class="intro">This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</p>
+            <form>
+                <legend>Let's <b>DO</b> this:</legend>
+                <div id="inputs">
+                    <div class="field">
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" autocomplete="name" placeholder="First Name" required></input>
+                    </div>
+                    <div class="field">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" autocomplete="family-name" placeholder="Last Name"required></input>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" autocomplete="email" placeholder="Email"required></input>
+                    </div>
+                    <div class="field">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" name="phoneNumber" autocomplete="tel" placeholder="Phone Number" pattern='[0-9]{10}'></input>
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Password" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required></input>
+                    </div>
+                    <div class="field">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="passwordC" name="confirmPassword" placeholder="Password (Again)" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'required></input>
+                    </div>
+                </div>
+                <div class="submitSection">
+                    <div id='passwordC-error' class='error'></div>
+                    <Button type="submit">Create Account</Button>
+                    <p>Already have an account? <a href="">Login</a></p>
+                </div>
+            </form>
+        </div>
+        <script>
+            const pw = document.querySelector('#password');
+            const pwC = document.querySelector('#passwordC');
+            const pwCError = document.querySelector('#passwordC-error');
+            
+                pwC.addEventListener("input", function (event) {
+                if (pwC.value !== pw.value) {
+                    pwCError.textContent = 'Passwords do not match';
+                } else {
+                    pwCError.textContent = '';
+                }
+                }); 
+        </script>
+</body>
+</html>
